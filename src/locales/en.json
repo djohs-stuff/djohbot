@@ -171,7 +171,7 @@
     },
     "events": {
         "channelDelete": {
-            "playerStop": "Channel deleted. Stopping player"
+            "playerStop": "Channel deleted. Stopping player."
         },
         "voiceChannelJoin": {
             "roomName": "{user}'s room"
