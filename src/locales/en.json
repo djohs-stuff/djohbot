@@ -41,7 +41,129 @@
         "docs": {
             "docs": "📚 Bot documentation can be found here: {link}"
         },
-        "flows": [],
+        "flows": {
+            "create": {
+                "limit": "❌ You can have only {limitFlows} flows.",
+                "noPerms": "❌ Bot has no permission to create a channel.",
+                "createChannelError": "❌ Failed to create flows manager channel.",
+                "createChannelSuccess": "🌀 Go to {channel} to set up a new flow.",
+                "embed": {
+                    "title": "🌀 Setting up a new flow.",
+                    "description": "Welcome to the flow manager! I\`ll help create a new.\n\nTrigger - is the thing, that triggers the \"action\". An action is what will be executed after triggering the trigger.\n You can create {limitTriggers} triggers and {limitActions} actions per flow.",
+                    "fields": {
+                        "commands": {
+                            "name": "Commands",
+                            "value": "• `edit <trigger or action> <slot>`: Change slot of the trigger or the action.\n• `save`: Save flow (deletes this channel).\n• `cancel`: Cancel flow creating (deletes this channel)."
+                        }, "actions": {
+                            "name": "Actions",
+                            "empty": "**Empty**"
+                        }, "triggers": {
+                            "name": "Triggers",
+                            "empty": "**Empty**"
+                        }
+                    }
+                },
+                "loading": "Loading...",
+                "createFlowSuccess": "✅ The flow has been successfully created.",
+                "createFlowCancel": "❌ The flow creation has been canceled."
+            },
+            "editing": {
+                "trigger": {
+                    "limitErr": "❌ You can have only {limits.limitTriggers} trigger(-s) per flow.",
+                    "embed": {
+                        "title": "\uD83D\uDCDD Choose a trigger for the slot {slot}",
+                        "clear": "0 - **Clear**\n\n"
+                    },
+                    "cleared": "✅ Trigger {slot} has been cleared!",
+                    "wrong": "✴️ Invalid trigger. Canceled.",
+                    "enter": "✏️ Enter {property}",
+                    "invalidValue": "❌ Invalid value. Trigger editing has been canceled.",
+                    "confirmEmbed": {
+                        "title": "\uD83D\uDCA8 Confirm trigger {slot}",
+                        "description": "**Is it right? Type `{yes}` or `{no}`.**"
+                    },
+                    "yes": "yes",
+                    "no": "no",
+                    "changedSuccessfully": "✅ Trigger {slot} has been changed successfully!",
+                    "changeCanceled": "✴️ Editing trigger ${slot} has been canceled."
+                },
+                "actions": {
+                    "limitErr": "❌ You can have only {limits.limitTriggers} actions(-s) per flow.",
+                    "embed": {
+                        "title": "\uD83D\uDCDD Choose an action for the slot {slot}",
+                        "clear": "0 - **Clear**\n\n"
+                    },
+                    "cleared": "✅ Action {slot} has been cleared!",
+                    "wrong": "✴️ Invalid action. Canceled.",
+                    "enter": "✏️ Enter {property}",
+                    "invalidValue": "❌ Invalid value. Action editing has been canceled.",
+                    "confirmEmbed": {
+                        "title": "\uD83D\uDCA8 Confirm action {slot}",
+                        "description": "**Is it right? Type `{yes}` or `{no}`.**"
+                    },
+                    "yes": "yes",
+                    "no": "no",
+                    "changedSuccessfully": "✅ Action {slot} has been changed successfully!",
+                    "changeCanceled": "✴️ Editing action ${slot} has been canceled."
+                },
+                "minErr": "❌ You must enter at least one trigger and action!",
+                "checkPin": "\uD83D\uDD17 Check pinned message for help! {pinned.url}",
+                "wrongCmd": "❌ Wrong command. Check pinned message for help!"
+            },
+            "delete": {
+                "notExist": "❌ This flow does not exists.",
+                "success": "✅ Flow \`{flowId}\` has been deleted."
+            },
+            "list": {
+                "embed": {
+                    "title": "Flows list",
+                    "description": "You used {flowIdsLength} of the {limitFlows} flows.",
+                    "triggers": "**Triggers:**",
+                    "actions": "**Actions:**",
+                    "flowId":"Flow \`{flowId}\`"
+                },
+                "noFlows": "❌ This guild has no preconfigured flows."
+            },
+            "types": {
+                "triggers": {
+                    "each": {
+                        "short": "Every Х count",
+                        "long": "When someone counts a number that is a multiple of X.",
+                        "explanation": "When someone counts a number that is a multiple of {0}"
+                    },
+                    "only": {
+                        "short": "X only",
+                        "long": "When someone counts the number Х.",
+                        "explanation": "When someone counts the number {0}"
+                    },
+                    "score": {
+                        "short": "X score",
+                        "long": "When someone will have score X in leaderboard.",
+                        "explanation": "When someone will have score {0} in leaderboard."
+                    },
+                    "countfail": {
+                        "short": "Count error",
+                        "long": "When someone counts wrong number.",
+                        "explanation": "When someone counts wrong number."
+                    }
+                },
+                "actions": {
+                    "pin": {
+                        "short": "Pin message",
+                        "explanation": "Pins message."
+                    },
+                    "lock": {
+                        "short": "Lock counting channel",
+                        "long": "This will make counting channel readonly.",
+                        "explanation": "Lock counting channel"
+                    },
+                    "reset": {
+                        "short": "Reset current count",
+                        "explanation": "Reset count to 0"
+                    }
+                }
+            }
+        },
         "info": [],
         "leaderboard": {
             "embedTitle": "Counting leaderboard ● {guild}"
